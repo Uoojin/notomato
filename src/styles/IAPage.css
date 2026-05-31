@@ -1,0 +1,191 @@
+:root {
+  --detail-pink: #ff5aa0;
+  --detail-soft-pink: #fbd8e8;
+  --detail-black: #070707;
+  --detail-gray: #757575;
+  --detail-x: clamp(70px, 6.3vw, 128px);
+  --main-kicker-size: clamp(16px, 2vw, 30px);
+  --main-title-size: clamp(30px, 2.45vw, 48px);
+  --main-body-size: clamp(15px, 2vw, 20px);
+}
+
+.detail-page {
+  min-height: 100vh;
+  background: #fff;
+  color: var(--detail-black);
+  font-family:
+    "Inter",
+    "Pretendard",
+    "Noto Sans KR",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.detail-hero {
+  display: grid;
+  grid-template-columns: 0.38fr 0.62fr;
+  gap: clamp(70px, 7.2vw, 140px);
+  align-items: end;
+  min-height: 100vh;
+  padding: 0 var(--detail-x) clamp(96px, 10vh, 120px);
+}
+
+.detail-hero-copy p,
+.detail-section-title,
+.detail-ia-section h2 {
+  margin: 0;
+  color: var(--detail-pink);
+  font-weight: 600;
+}
+
+.detail-hero-copy p {
+  margin-bottom: clamp(70px, 7.4vh, 100px);
+  font-size: var(--main-kicker-size);
+}
+
+.detail-hero-copy h1 {
+  margin: 0;
+  font-size: var(--main-title-size);
+  line-height: 1.42;
+}
+
+.detail-hero-desc {
+  max-width: 1300px;
+  margin: 0;
+  color: #777;
+  font-size: var(--main-body-size);
+  line-height: 1.86;
+}
+
+.detail-ia-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
+  gap: clamp(70px, 8.5vw, 165px);
+  align-items: start;
+  padding: clamp(72px, 7vw, 126px) var(--detail-x);
+}
+
+.detail-ia-section h2,
+.detail-section-title {
+  font-size: var(--main-kicker-size);
+  line-height: 1.35;
+}
+
+.detail-ia-copy p {
+  margin: 0;
+  padding-top: clamp(42px, 3.8vw, 72px);
+  color: #777;
+  font-size: var(--main-body-size);
+  line-height: 1.85;
+}
+
+.detail-chip-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(18px, 1.7vw, 34px);
+  margin-top: clamp(38px, 3.4vw, 66px);
+}
+
+.detail-chip-row span {
+  display: grid;
+  height: clamp(52px, 3.3vw, 66px);
+  place-items: center;
+  background: #fff4f9;
+  border-radius: 999px;
+  font-size: clamp(16px, 1vw, 20px);
+  font-weight: 500;
+}
+
+.detail-flow-component h2,
+.detail-flow-block h2 {
+  margin: 0;
+  color: var(--detail-pink);
+  font-size: var(--main-kicker-size);
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.detail-flow-block h2 {
+  text-align: center;
+}
+
+.detail-flow-component img {
+  display: block;
+  width: 100%;
+  margin-top: clamp(50px, 6vw, 100px);
+}
+
+.detail-app-flow-section {
+  padding: clamp(72px, 6.8vw, 130px) var(--detail-x) clamp(88px, 8vw, 150px);
+}
+
+.detail-flow-block + .detail-flow-block {
+  margin-top: clamp(92px, 8vw, 155px);
+}
+
+.detail-flow-block img {
+  display: block;
+  width: min(100%, 1620px);
+  margin: clamp(52px, 4.8vw, 92px) auto 0;
+}
+
+.detail-login-flow img {
+  width: min(100%, 1050px);
+}
+
+.detail-service-flow img {
+  width: min(100%, 1580px);
+}
+
+.wireframe-section {
+  overflow: hidden;
+  background: linear-gradient(#fff4fa, #fff);
+}
+
+.wireframe-section img {
+  display: block;
+  width: 100%;
+  min-height: clamp(520px, 54vw, 900px);
+  object-fit: cover;
+  object-position: center top;
+}
+
+@media (max-width: 1180px) {
+  .detail-hero,
+  .detail-ia-section {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-hero {
+    align-content: end;
+    gap: 46px;
+  }
+
+  .detail-chip-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detail-flow-component img {
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --detail-x: 22px;
+  }
+
+  .detail-hero-copy p {
+    margin-bottom: 34px;
+  }
+
+  .detail-hero-desc {
+    font-size: 17px;
+  }
+
+  .detail-chip-row {
+    grid-template-columns: 1fr;
+  }
+}
