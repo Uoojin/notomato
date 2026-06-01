@@ -10,8 +10,10 @@ import mainHomeSub from "../img/service/mainHome&sub.png";
 import camera from "../img/service/camera.png";
 import aiScanCameraVideo from "../img/service/AIscancamera.mov";
 import diet1 from "../img/service/diet_1.png";
+import dietVideo from "../img/service/diet.mov";
 import diet2 from "../img/service/diet_2.png";
 import report from "../img/service/report.png";
+import reportVideo from "../img/service/report.mp4";
 import feed from "../img/service/feed.png";
 import "../styles/appShowingPage.css";
 import MainHeader from "../components/MainHeader";
@@ -28,7 +30,7 @@ export function ServiceSections({ includeHero = true } = {}) {
       ([entry]) => {
         if (entry.isIntersecting) setLoginVisible(true);
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     observer.observe(loginNode);
@@ -71,7 +73,10 @@ export function ServiceSections({ includeHero = true } = {}) {
         <img src={bannerLogo} alt="" />
       </section>
 
-      <section className={`service-login-section${loginVisible ? " is-visible" : ""}`} ref={loginRef}>
+      <section
+        className={`service-login-section${loginVisible ? " is-visible" : ""}`}
+        ref={loginRef}
+      >
         <div className="service-section-heading">
           <h2>Login & Sign</h2>
           <p>
@@ -135,6 +140,12 @@ export function ServiceSections({ includeHero = true } = {}) {
               <br />
               알림을 확인할 수 있습니다.
             </p>
+            <p className="home-note-copy home-note-left-copy-bottom">
+              <b>개인화 콘텐츠 제공</b>
+              사용자 건강 상태에 맞는 식단 및
+              <br />
+              건강 정보를 바탕으로 추천합니다.
+            </p>
           </span>
           <span className="service-note note-home-top">
             <p className="home-note-copy home-note-top-copy">
@@ -145,16 +156,17 @@ export function ServiceSections({ includeHero = true } = {}) {
           </span>
           <span className="service-note note-home-mid">
             <p className="home-note-copy home-note-mid-copy">
-              <b>개인 맞춤 식단 추천</b>사용자 정보와 식습관을 기반으로
+              <b>개인 맞춤 식단 추천</b>
+              사용자 정보와 식습관을 기반으로
               <br />
               맞춤형 식단을 제공합니다.
             </p>
           </span>
           <span className="service-note note-home-bottom-a">
             <p className="home-note-copy home-note-bottom-a-copy">
-              <b>회원 정보 관리</b>프로필과 계정 정보를 간편하게
+              <b>개인화 콘텐츠 제공</b>사용자 건강 상태에 맞는 식단 및
               <br />
-              수정할 수 있습니다.
+              건강 정보를 바탕으로 추천합니다.
             </p>
           </span>
           <span className="service-note note-home-bottom-b">
@@ -177,8 +189,15 @@ export function ServiceSections({ includeHero = true } = {}) {
             현실로 만듭니다.
           </p>
         </div>
-        <div className="service-ai-diet-map" aria-label="notomato ai scan and diet flow">
-          <img className="service-ai-overlay service-camera-overlay" src={camera} alt="notomato ai scan camera screens" />
+        <div
+          className="service-ai-diet-map"
+          aria-label="notomato ai scan and diet flow"
+        >
+          <img
+            className="service-ai-overlay service-camera-overlay"
+            src={camera}
+            alt="notomato ai scan camera screens"
+          />
           <video
             className="service-ai-camera-video"
             src={aiScanCameraVideo}
@@ -189,8 +208,26 @@ export function ServiceSections({ includeHero = true } = {}) {
             preload="auto"
             aria-label="AI scan camera screen preview"
           />
-          <img className="service-ai-overlay service-diet-one-overlay" src={diet1} alt="notomato diet calendar screen" />
-          <img className="service-ai-overlay service-diet-two-overlay" src={diet2} alt="notomato diet schedule and meal screens" />
+          <img
+            className="service-ai-overlay service-diet-one-overlay"
+            src={diet1}
+            alt="notomato diet calendar screen"
+          />
+          <video
+            className="service-diet-one-video"
+            src={dietVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-label="Diet calendar screen preview"
+          />
+          <img
+            className="service-ai-overlay service-diet-two-overlay"
+            src={diet2}
+            alt="notomato diet schedule and meal screens"
+          />
         </div>
         <div className="diet-detail-group">
           <div>
@@ -202,19 +239,19 @@ export function ServiceSections({ includeHero = true } = {}) {
           </div>
         </div>
         <span className="diet-caption caption-one">
-          복약·식단 데이터를 통합 분석하여
+          잊지 않게 관리하는
           <br />
-          최적화된 식사 환경을 설계
+          맞춤형 복약 및 식사 스케줄
         </span>
         <span className="diet-caption caption-two">
-          복약·식단 데이터를 통합 분석하여
+          내 몸에 꼭 맞춰
           <br />
-          최적화된 식사 환경을 설계
+          알아서 제안하는 하루 추천 식단
         </span>
         <span className="diet-caption caption-three">
-          복약·식단 데이터를 통합 분석하여
+          재료부터 조리 순서까지
           <br />
-          최적화된 식사 환경을 설계
+          꼼꼼하게 알려주는 맞춤 레시피
         </span>
       </section>
 
@@ -228,11 +265,23 @@ export function ServiceSections({ includeHero = true } = {}) {
             현실로 만듭니다.
           </p>
         </div>
-        <img
-          className="report-combined"
-          src={report}
-          alt="notomato report screens"
-        />
+        <div className="report-media">
+          <img
+            className="report-combined"
+            src={report}
+            alt="notomato report screens"
+          />
+          <video
+            className="report-video-overlay"
+            src={reportVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-label="Report screen preview"
+          />
+        </div>
         <span className="service-note note-report-a">
           <b>클릭 한 번으로 연결되는 상세 건강 리포트</b>
           메인 화면의 알림 카드를 누르면, 그동안 쌓인 나의
@@ -274,22 +323,39 @@ export function ServiceSections({ includeHero = true } = {}) {
         <div className="service-section-heading">
           <h2>Feed</h2>
           <p>
-            노토마토는 소외된 질환자를 위해 사용자의 질환·복약·식단 데이터를
-            통합 분석하여 최적화된 식사 환경을 설계합니다. 정보의 장벽을 허물어
-            질환자와 보호자 모두가 안심하고 편리하게 식사할 수 있는 일상을
-            현실로 만듭니다.
+            나와 같은 고민을 가진 메이트들과 소통하며, 지치지 않는 건강한 식단
+            관리 일상을 만들어갑니다.
+            <br />
+            이웃들이 직접 검증한 식단 레시피부터 복약 노하우까지, 유용한 건강
+            팁을 자유롭게 공유하고 응원을 나눕니다.
           </p>
         </div>
         <div className="feed-visual">
           <img src={feed} alt="notomato feed screen" />
           <span className="service-note note-feed-a">
-            추천 사용자 팔로우 기능
+            <b>맞춤형 건강 메이트 추천</b>
+            나랑 비슷한 건강 상태를 가진 유저들
+            <br />
+            을 팔로우하고, 그들의 식단 노하우와
+            <br />
+            복약 일상을 피드로 받아보세요.
           </span>
           <span className="service-note note-feed-b">
-            다양한 카테고리 제공 및 선택
+            <b>내 관심사에 딱 맞는 카테고리별 피드 탐색</b>
+            식단, 관리, 식품 추천, 비포&amp;애프터 등 내
+            <br />
+            가 지금 필요한 정보만 카테고리별로 골라
+            <br />
+            빠르게 모아볼 수 있습니다.
           </span>
-          <span className="service-note note-feed-c">기능 간단 설명</span>
-        
+          <span className="service-note note-feed-c">
+            <b>이웃 메이트들이 직접 검증한 생생한 건강 레시피</b>
+            맛과 건강을 모두 잡은 메이트들의 실제 식단 사진
+            <br />
+            과 꿀팁 가득한 조리법을 확인하고, 좋아요와 북마
+            <br />
+            크로 저장합니다.
+          </span>
         </div>
       </section>
     </>
