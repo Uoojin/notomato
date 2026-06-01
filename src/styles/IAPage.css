@@ -172,6 +172,18 @@
   }
 }
 
+@media (min-width: 1181px) and (max-width: 1599px) {
+  :root {
+    --detail-x: 6.3vw;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1180px) {
+  :root {
+    --detail-x: 5vw;
+  }
+}
+
 @media (max-width: 760px) {
   :root {
     --detail-x: 22px;

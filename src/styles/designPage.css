@@ -86,7 +86,7 @@
   align-items: center;
   min-height: clamp(300px, 24.2vw, 466px);
   margin: clamp(32px, 4vw, 80px) 8px;
-  padding: 250px 110px 80px 110px;
+  padding: clamp(150px, 13vw, 250px) clamp(66px, 5.75vw, 110px) clamp(54px, 4.2vw, 80px);
   overflow: hidden;
   border-radius: clamp(28px, 2vw, 44px);
   background: var(--detail-pink);
@@ -276,6 +276,23 @@
 
   .logo-wordmark {
     width: min(100%, 860px);
+  }
+}
+
+@media (min-width: 1181px) and (max-width: 1599px) {
+  .design-solution-card {
+    min-height: 24.2vw;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1180px) {
+  :root {
+    --detail-x: 5vw;
+  }
+
+  .design-solution-card {
+    grid-template-columns: 1fr;
+    padding: 130px 54px 58px;
   }
 }
 
