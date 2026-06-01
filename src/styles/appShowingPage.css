@@ -998,6 +998,24 @@
   color: var(--detail-pink);
   font-weight: 700;
 }
+
+.last-visual-section {
+  width: 100%;
+  margin: 31vh 0 0;
+  padding: 0;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.last-visual-section img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.last-visual-section + .main-footer {
+  top: 0;
+}
 /* 
 .note-feed-a::before,
 .note-feed-b::before,

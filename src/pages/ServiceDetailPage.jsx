@@ -15,6 +15,7 @@ import diet2 from "../img/service/diet_2.png";
 import report from "../img/service/report.png";
 import reportVideo from "../img/service/report.mp4";
 import feed from "../img/service/feed.png";
+import last from "../img/last.png";
 import "../styles/appShowingPage.css";
 import MainHeader from "../components/MainHeader";
 
@@ -408,12 +409,22 @@ export function ServiceSections({ includeHero = true } = {}) {
   );
 }
 
+export function LastVisualSection() {
+  return (
+    <section className="last-visual-section">
+      <img src={last} alt="notomato app screens" />
+    </section>
+  );
+}
+
 function ServiceDetailPage() {
   return (
     <main className="detail-page service-detail">
       <MainHeader active="service" />
 
       <ServiceSections />
+
+      <LastVisualSection />
 
       <Footer />
     </main>

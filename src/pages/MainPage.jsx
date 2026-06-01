@@ -12,7 +12,7 @@ import SpeechSection from "../sections/SpeechSection";
 import VideoSection from "../sections/VideoSection";
 import { ProcessSections } from "./ProcessDetailPage";
 import { DesignSystemSections } from "./DesignSystemDetailPage";
-import { ServiceSections } from "./ServiceDetailPage";
+import { LastVisualSection, ServiceSections } from "./ServiceDetailPage";
 
 function MainPage() {
   return (
@@ -29,6 +29,7 @@ function MainPage() {
       <ProcessSections />
       <DesignSystemSections />
       <ServiceSections includeHero={false} />
+      <LastVisualSection />
       <Footer />
       <TopButton />
     </main>
