@@ -20,20 +20,51 @@ import MainHeader from "../components/MainHeader";
 
 export function ServiceSections({ includeHero = true } = {}) {
   const loginRef = useRef(null);
-  const [loginVisible, setLoginVisible] = useState(false);
+  const loadingRef = useRef(null);
+  const mainHomeRef = useRef(null);
+  const aiDietRef = useRef(null);
+  const dietRevealRef = useRef(null);
+  const reportRef = useRef(null);
+  const feedRef = useRef(null);
+  const [visibleSections, setVisibleSections] = useState({
+    login: false,
+    loading: false,
+    mainHome: false,
+    aiScan: false,
+    diet: false,
+    report: false,
+    feed: false,
+  });
 
   useEffect(() => {
-    const loginNode = loginRef.current;
-    if (!loginNode) return undefined;
+    const targets = [
+      [loginRef.current, "login"],
+      [loadingRef.current, "loading"],
+      [mainHomeRef.current, "mainHome"],
+      [aiDietRef.current, "aiScan"],
+      [dietRevealRef.current, "diet"],
+      [reportRef.current, "report"],
+      [feedRef.current, "feed"],
+    ].filter(([node]) => node);
+
+    if (!targets.length) return undefined;
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setLoginVisible(true);
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const target = targets.find(([node]) => node === entry.target);
+          if (!target) return;
+          setVisibleSections((current) => ({
+            ...current,
+            [target[1]]: true,
+          }));
+        });
       },
       { threshold: 0.2 },
     );
 
-    observer.observe(loginNode);
+    targets.forEach(([node]) => observer.observe(node));
     return () => observer.disconnect();
   }, []);
 
@@ -74,7 +105,7 @@ export function ServiceSections({ includeHero = true } = {}) {
       </section>
 
       <section
-        className={`service-login-section${loginVisible ? " is-visible" : ""}`}
+        className={`service-login-section${visibleSections.login ? " is-visible" : ""}`}
         ref={loginRef}
       >
         <div className="service-section-heading">
@@ -113,12 +144,18 @@ export function ServiceSections({ includeHero = true } = {}) {
         </div>
       </section>
 
-      <section className="service-loading-section">
+      <section
+        className={`service-loading-section${visibleSections.loading ? " is-visible" : ""}`}
+        ref={loadingRef}
+      >
         <h2>Loading</h2>
         <img src={loading} alt="notomato loading screens" />
       </section>
 
-      <section className="service-mainhome-section">
+      <section
+        className={`service-mainhome-section${visibleSections.mainHome ? " is-visible" : ""}`}
+        ref={mainHomeRef}
+      >
         <div className="service-section-heading">
           <h2>Main Home</h2>
           <p>
@@ -179,7 +216,10 @@ export function ServiceSections({ includeHero = true } = {}) {
         </div>
       </section>
 
-      <section className="service-ai-diet-section">
+      <section
+        className={`service-ai-diet-section${visibleSections.aiScan ? " is-ai-visible" : ""}${visibleSections.diet ? " is-diet-visible" : ""}`}
+        ref={aiDietRef}
+      >
         <div className="service-ai-copy">
           <h2>AI Scan Camera</h2>
           <p>
@@ -229,8 +269,8 @@ export function ServiceSections({ includeHero = true } = {}) {
             alt="notomato diet schedule and meal screens"
           />
         </div>
-        <div className="diet-detail-group">
-          <div>
+        <div className="diet-detail-group" ref={dietRevealRef}>
+          <div className="diet-txt-group">
             <h2>Diet</h2>
             <p>
               사용자의 질환·복약·식단 데이터를 통합 분석하여 최적화된 식사
@@ -255,7 +295,10 @@ export function ServiceSections({ includeHero = true } = {}) {
         </span>
       </section>
 
-      <section className="service-report-section">
+      <section
+        className={`service-report-section${visibleSections.report ? " is-visible" : ""}`}
+        ref={reportRef}
+      >
         <div className="report-copy">
           <h2>Report</h2>
           <p>
@@ -319,7 +362,10 @@ export function ServiceSections({ includeHero = true } = {}) {
         </p>
       </section> */}
 
-      <section className="service-feed-section">
+      <section
+        className={`service-feed-section${visibleSections.feed ? " is-visible" : ""}`}
+        ref={feedRef}
+      >
         <div className="service-section-heading">
           <h2>Feed</h2>
           <p>

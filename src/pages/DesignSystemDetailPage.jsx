@@ -1,41 +1,39 @@
 import React, { useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer";
-import logo from "../img/logo.png";
 import bannerLogo from "../img/banner_logo.png";
 import designMain from "../img/desigin_system/designPage_mainImg.png";
-import logoIcon from "../img/desigin_system/logo_icon.png";
-import systemIcon from "../img/desigin_system/system_icon.png";
-import uiComponent from "../img/desigin_system/uiComponent.png";
+import component from "../img/desigin_system/component.png";
+import designBg from "../img/desigin_system/designBg.png";
 import iconSet from "../img/desigin_system/icon.png";
 import "../styles/designPage.css";
 import MainHeader from "../components/MainHeader";
 
 export function DesignSystemSections() {
-  const heroRef = useRef(null);
-  const [heroVisible, setHeroVisible] = useState(false);
+  const signalRef = useRef(null);
+  const [signalVisible, setSignalVisible] = useState(false);
 
   useEffect(() => {
-    const heroNode = heroRef.current;
-    if (!heroNode) return undefined;
+    const signalNode = signalRef.current;
+    if (!signalNode) return undefined;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setHeroVisible(true);
+        if (entry.isIntersecting) setSignalVisible(true);
       },
       { threshold: 0.2 }
     );
 
-    observer.observe(heroNode);
+    observer.observe(signalNode);
     return () => observer.disconnect();
   }, []);
 
   return (
     <>
-      <section className={`design-hero${heroVisible ? " is-visible" : ""}`} id="design" ref={heroRef}>
+      <section className="design-hero" id="design">
         <img src={designMain} alt="notomato design system application preview" />
       </section>
 
-      <section className="logo-system-section">
+      {/* <section className="logo-system-section">
         <p className="detail-section-title">Logo</p>
         <div className="logo-system-grid">
           <div className="logo-construction">
@@ -43,7 +41,7 @@ export function DesignSystemSections() {
           </div>
           <img className="logo-wordmark" src={logo} alt="notomato" />
         </div>
-      </section>
+      </section> */}
 
       <section className="design-solution-card">
         <p>Visual Identity</p>
@@ -54,17 +52,8 @@ export function DesignSystemSections() {
         <img src={bannerLogo} alt="" />
       </section>
 
-      <section className="type-icon-section">
-        <div className="typeface-block">
-          <p className="detail-section-title">Typeface</p>
-          <h2>Pretendard</h2>
-          <span>Regular · Medium · Bold</span>
-          <strong>가 나 다 / Aa Bb Cc</strong>
-        </div>
-        <div className="system-icon-block">
-          <p className="detail-section-title">System Icons</p>
-          <img src={systemIcon} alt="notomato system icons" />
-        </div>
+      <section className="design-component-section">
+        <img src={component} alt="notomato design system components" />
       </section>
 
       <section className="color-system-section">
@@ -90,12 +79,8 @@ export function DesignSystemSections() {
         </div>
       </section>
 
-      <section className="ui-components-section">
-        <p className="detail-section-title">UI Components</p>
-        <img className="ui-components-image" src={uiComponent} alt="notomato UI components" />
-      </section>
-
-      <section className="main-icon-section">
+      <section className={`main-icon-section${signalVisible ? " is-visible" : ""}`} ref={signalRef}>
+        <img className="main-icon-bg" src={designBg} alt="" />
         <p>Disease Signal System</p>
         <h2>당신의 건강 상태를 나타내는 4가지 신호등</h2>
         <span>
