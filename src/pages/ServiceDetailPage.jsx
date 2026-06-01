@@ -223,7 +223,7 @@ export function ServiceSections({ includeHero = true } = {}) {
         </span>
       </section>
 
-      <section className="service-user-report-section">
+      {/* <section className="service-user-report-section">
         <img
           className="user-report-main"
           src={mainHome}
@@ -245,7 +245,7 @@ export function ServiceSections({ includeHero = true } = {}) {
           <br />
           관련 내용 설명 사용자 정보 관련 내용 설명
         </p>
-      </section>
+      </section> */}
 
       <section className="service-feed-section">
         <div className="service-section-heading">
