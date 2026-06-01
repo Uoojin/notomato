@@ -43,7 +43,7 @@ export function ProcessSections() {
 
   return (
     <>
-      <section className={`detail-hero process-hero${heroVisible ? " is-visible" : ""}`} ref={heroRef}>
+      <section className={`detail-hero process-hero${heroVisible ? " is-visible" : ""}`} id="system" ref={heroRef}>
         <div className="detail-hero-copy">
           <p>Information Architecture</p>
           <h1>복잡한 건강 관리를<br />직관적인 흐름으로 연결하다</h1>
@@ -53,7 +53,7 @@ export function ProcessSections() {
         </p>
       </section>
 
-      <section className={`detail-ia-section${iaVisible ? " is-visible" : ""}`} id="system" ref={iaRef}>
+      <section className={`detail-ia-section${iaVisible ? " is-visible" : ""}`} ref={iaRef}>
         <div className="detail-ia-copy">
           <h2>Information Architecture<br />& WireFrame</h2>
           <p>

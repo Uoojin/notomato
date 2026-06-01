@@ -21,7 +21,13 @@ function MainHeader() {
   const handleNavClick = (event, target) => {
     event.preventDefault();
     setActiveTarget(target);
-    document.getElementById(target)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const targetElement = document.getElementById(target);
+    if (!targetElement) return;
+
+    window.scrollTo({
+      top: targetElement.getBoundingClientRect().top + window.scrollY,
+      behavior: "smooth",
+    });
   };
 
   const handleLogoClick = (event) => {
