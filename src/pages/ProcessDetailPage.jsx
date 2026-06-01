@@ -12,13 +12,16 @@ const iaItems = ["홈", "식단기록", "AI 분석 카메라", "마이케어", "
 export function ProcessSections() {
   const heroRef = useRef(null);
   const iaRef = useRef(null);
+  const flowRef = useRef(null);
   const [heroVisible, setHeroVisible] = useState(false);
   const [iaVisible, setIaVisible] = useState(false);
+  const [flowVisible, setFlowVisible] = useState(false);
 
   useEffect(() => {
     const heroNode = heroRef.current;
     const iaNode = iaRef.current;
-    if (!heroNode || !iaNode) return undefined;
+    const flowNode = flowRef.current;
+    if (!heroNode || !iaNode || !flowNode) return undefined;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -26,6 +29,7 @@ export function ProcessSections() {
           if (!entry.isIntersecting) return;
           if (entry.target === heroNode) setHeroVisible(true);
           if (entry.target === iaNode) setIaVisible(true);
+          if (entry.target === flowNode) setFlowVisible(true);
         });
       },
       { threshold: 0.2 }
@@ -33,6 +37,7 @@ export function ProcessSections() {
 
     observer.observe(heroNode);
     observer.observe(iaNode);
+    observer.observe(flowNode);
     return () => observer.disconnect();
   }, []);
 
@@ -66,7 +71,7 @@ export function ProcessSections() {
         </div>
       </section>
 
-      <section className="detail-app-flow-section">
+      <section className={`detail-app-flow-section${flowVisible ? " is-visible" : ""}`} ref={flowRef}>
         <div className="detail-flow-block detail-login-flow">
           <h2>Login & Sign-Up Flow</h2>
           <img src={loginFlow} alt="login and sign-up flow" />

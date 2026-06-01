@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer";
 import bannerLogo from "../img/banner_logo.png";
 import serviceHeroPhone from "../img/service/service_hero_phone.png";
 import serviceNotomato from "../img/service/notomato.png";
-import loginPhone from "../img/service/login_phone.png";
+import loginVideo from "../img/service/login.mov";
 import loginPhone2 from "../img/service/login_phone2.png";
 import loading from "../img/service/loading.png";
 import mainHomeSub from "../img/service/mainHome&sub.png";
@@ -16,6 +16,24 @@ import "../styles/appShowingPage.css";
 import MainHeader from "../components/MainHeader";
 
 export function ServiceSections({ includeHero = true } = {}) {
+  const loginRef = useRef(null);
+  const [loginVisible, setLoginVisible] = useState(false);
+
+  useEffect(() => {
+    const loginNode = loginRef.current;
+    if (!loginNode) return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setLoginVisible(true);
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(loginNode);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       {includeHero && (
@@ -52,7 +70,7 @@ export function ServiceSections({ includeHero = true } = {}) {
         <img src={bannerLogo} alt="" />
       </section>
 
-      <section className="service-login-section">
+      <section className={`service-login-section${loginVisible ? " is-visible" : ""}`} ref={loginRef}>
         <div className="service-section-heading">
           <h2>Login & Sign</h2>
           <p>
@@ -63,10 +81,15 @@ export function ServiceSections({ includeHero = true } = {}) {
           </p>
         </div>
         <div className="service-login-visual">
-          <img
+          <video
             className="service-login-phone"
-            src={loginPhone}
-            alt="notomato login screen"
+            src={loginVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-label="notomato login screen"
           />
           <div className="service-login-flow-wrap">
             <div className="login-step-track" aria-hidden="true">
@@ -154,9 +177,9 @@ export function ServiceSections({ includeHero = true } = {}) {
           </p>
         </div>
         <div className="service-ai-diet-map" aria-label="notomato ai scan and diet flow">
-          <img className="service-camera-img" src={camera} alt="notomato ai scan camera screens" />
-          <img className="service-diet-one-img" src={diet1} alt="notomato diet calendar screen" />
-          <img className="service-diet-two-img" src={diet2} alt="notomato diet schedule and meal screens" />
+          <img className="service-ai-overlay service-camera-overlay" src={camera} alt="notomato ai scan camera screens" />
+          <img className="service-ai-overlay service-diet-one-overlay" src={diet1} alt="notomato diet calendar screen" />
+          <img className="service-ai-overlay service-diet-two-overlay" src={diet2} alt="notomato diet schedule and meal screens" />
         </div>
         <div className="diet-detail-group">
           <div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer";
 import logo from "../img/logo.png";
 import bannerLogo from "../img/banner_logo.png";
@@ -11,9 +11,27 @@ import "../styles/designPage.css";
 import MainHeader from "../components/MainHeader";
 
 export function DesignSystemSections() {
+  const heroRef = useRef(null);
+  const [heroVisible, setHeroVisible] = useState(false);
+
+  useEffect(() => {
+    const heroNode = heroRef.current;
+    if (!heroNode) return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setHeroVisible(true);
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(heroNode);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
-      <section className="design-hero" id="design">
+      <section className={`design-hero${heroVisible ? " is-visible" : ""}`} id="design" ref={heroRef}>
         <img src={designMain} alt="notomato design system application preview" />
       </section>
 

@@ -8,16 +8,12 @@
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  width: max-content;
-  max-width: calc(100vw - 80px);
-  white-space: nowrap;
   transform: translateX(-50%);
 }
 
 .logo-pill,
 .header-pill {
   display: flex;
-  flex: 0 0 auto;
   align-items: center;
   height: 36px;
   border-radius: 999px;
@@ -45,7 +41,6 @@
 
 .header-pill a {
   display: grid;
-  flex: 0 0 auto;
   min-width: 95px;
   height: 28px;
   place-items: center;

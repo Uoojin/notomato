@@ -334,7 +334,7 @@ section[id] {
 .disease-sticky {
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: clamp(680px, 76vh, 820px);
   overflow: hidden;
   background: #fff;
 }
@@ -346,7 +346,7 @@ section[id] {
   flex-direction: column;
   justify-content: flex-start;
   padding: clamp(76px, 7vw, 130px) var(--page-x);
-  padding-top: clamp(118px, 12vh, 160px);
+  padding-top: clamp(136px, 12vh, 180px);
   background: #fff;
   opacity: 0;
   pointer-events: none;
@@ -587,26 +587,24 @@ section[id] {
   margin: clamp(116px, 12vw, 230px) calc(var(--page-x) * -1) 0;
   padding: clamp(96px, 9vw, 178px) var(--page-x) 0;
   text-align: center;
-  overflow: visible;
+  /* overflow: hidden; */
 }
 
 .solution-arc::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 50%;
+  inset: 0 0 auto;
   z-index: 0;
-  width: 150vw;
-  height: clamp(320px, 31vw, 600px);
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 214, 232, 0.72) 0%,
-    rgba(255, 246, 250, 0.72) 58%,
-    rgba(255, 255, 255, 0) 100%
+  height: clamp(420px, 46vw, 880px);
+  border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+  background: radial-gradient(
+    ellipse at top,
+    rgb(255 90 160 / 18%) 0%,
+    rgb(255 173 208 / 12%) 42%,
+    rgba(255, 255, 255, 0) 72%
   );
   opacity: 0;
-  transform: translateX(-50%) translateY(30px);
+  /* transform: translateX(-50%) translateY(30px); */
   transition:
     opacity 900ms ease 420ms,
     transform 900ms ease 420ms;
@@ -615,7 +613,7 @@ section[id] {
 
 .solution-arc.is-visible::before {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  /* transform: translateX(-50%) translateY(0); */
 }
 
 .solution-arc > * {
@@ -727,14 +725,19 @@ section[id] {
 .solution-arc::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 50%;
-  z-index: 1;
+  top: 0%;
+  left: 50.04%;
   width: 1px;
-  height: clamp(78px, 7vw, 140px);
+  height: 130px;
   border-left: 1px dashed #ffb3d3;
   opacity: 0;
-  transform: translate(-50%, -100%) scaleY(0.55);
+  background: linear-gradient(to top, #ff72ad 0 54%, rgba(255, 114, 173, 0));
+  transform: translateX(-50%);
+  mask-image: repeating-linear-gradient(
+    to top,
+    #000 0 7px,
+    transparent 7px 14px
+  );
   transform-origin: bottom;
   transition:
     opacity 520ms ease,

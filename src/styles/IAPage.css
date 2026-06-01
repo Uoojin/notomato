@@ -159,6 +159,23 @@
   padding: clamp(72px, 6.8vw, 130px) var(--detail-x) clamp(88px, 8vw, 150px);
 }
 
+.detail-app-flow-section .detail-flow-block {
+  opacity: 0;
+  transform: translate3d(0, 44px, 0);
+  transition:
+    opacity 820ms ease,
+    transform 820ms ease;
+}
+
+.detail-app-flow-section.is-visible .detail-flow-block {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.detail-app-flow-section.is-visible .detail-flow-block:nth-child(2) {
+  transition-delay: 180ms;
+}
+
 .detail-flow-block + .detail-flow-block {
   margin-top: clamp(92px, 8vw, 155px);
 }

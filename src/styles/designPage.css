@@ -47,6 +47,16 @@
   display: block;
   width: min(100%, 1700px);
   border-radius: clamp(34px, 2.25vw, 44px);
+  opacity: 0;
+  transform: translate3d(0, 44px, 0);
+  transition:
+    opacity 820ms ease,
+    transform 820ms ease;
+}
+
+.design-hero.is-visible img {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 .logo-system-section {
