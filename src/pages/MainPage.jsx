@@ -19,6 +19,7 @@ function MainPage() {
     <main className="main-page detail-page">
       <MainHeader />
       <HeroSection />
+      <VideoSection />
       <BackgroundSection />
       <ResearchIntroSection />
       <DiseaseScroller />
@@ -28,7 +29,6 @@ function MainPage() {
       <ProcessSections />
       <DesignSystemSections />
       <ServiceSections includeHero={false} />
-      <VideoSection />
       <Footer />
       <TopButton />
     </main>

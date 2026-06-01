@@ -551,21 +551,26 @@ section[id] {
   margin: clamp(116px, 12vw, 230px) calc(var(--page-x) * -1) 0;
   padding: clamp(96px, 9vw, 178px) var(--page-x) 0;
   text-align: center;
+  overflow: visible;
 }
 
 .solution-arc::before {
   content: "";
   position: absolute;
-  inset: 0 0 auto;
+  top: 0;
+  left: 50%;
   z-index: 0;
-  height: clamp(420px, 46vw, 880px);
-  border-radius: 50% 50% 0 0 / 20% 20% 0 0;
-  background: radial-gradient(
-    ellipse at top,
-    rgb(255 90 160 / 18%) 0%,
-    rgb(255 173 208 / 12%) 42%,
-    rgba(255, 255, 255, 0) 72%
+  width: 150vw;
+  height: clamp(320px, 31vw, 600px);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 214, 232, 0.72) 0%,
+    rgba(255, 246, 250, 0.72) 58%,
+    rgba(255, 255, 255, 0) 100%
   );
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 .solution-arc > * {
@@ -630,18 +635,13 @@ section[id] {
 .solution-arc::after {
   content: "";
   position: absolute;
-  top: clamp(-150px, -8vw, -92px);
+  top: 0;
   left: 50%;
+  z-index: 1;
   width: 1px;
-  height: 130px;
+  height: clamp(78px, 7vw, 140px);
   border-left: 1px dashed #ffb3d3;
-  background: linear-gradient(to top, #ff72ad 0 54%, rgba(255, 114, 173, 0));
-  transform: translateX(-50%);
-  mask-image: repeating-linear-gradient(
-    to top,
-    #000 0 7px,
-    transparent 7px 14px
-  );
+  transform: translate(-50%, -100%);
 }
 
 .solution-dot {

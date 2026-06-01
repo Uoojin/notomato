@@ -6,10 +6,8 @@ import serviceNotomato from "../img/service/notomato.png";
 import loginPhone from "../img/service/login_phone.png";
 import loginPhone2 from "../img/service/login_phone2.png";
 import loading from "../img/service/loading.png";
-import mainHome from "../img/service/mainHome.png";
-import mainHomeSide from "../img/service/mainHome_side.png";
-import aiCameraDiet from "../img/service/AICamera&diet.png";
-import diet2 from "../img/service/diet_2.png";
+import mainHomeSub from "../img/service/mainHome&sub.png";
+import aiScanDiet from "../img/service/Aiscan+diet.png";
 import report from "../img/service/report.png";
 import feed from "../img/service/feed.png";
 import "../styles/appShowingPage.css";
@@ -101,14 +99,9 @@ export function ServiceSections({ includeHero = true } = {}) {
         </div>
         <div className="home-visual">
           <img
-            className="home-main-img"
-            src={mainHome}
-            alt="notomato main home screen"
-          />
-          <img
-            className="home-side-img"
-            src={mainHomeSide}
-            alt="notomato side menu screen"
+            className="home-combined-img"
+            src={mainHomeSub}
+            alt="notomato main home and side menu screens"
           />
           <span className="service-note note-home-left">
             <p className="home-note-copy home-note-left-copy">
@@ -160,7 +153,7 @@ export function ServiceSections({ includeHero = true } = {}) {
         </div>
         <img
           className="service-ai-diet-map"
-          src={aiCameraDiet}
+          src={aiScanDiet}
           alt="notomato ai scan and diet flow"
         />
         <div className="diet-detail-group">
@@ -171,7 +164,6 @@ export function ServiceSections({ includeHero = true } = {}) {
               환경을 설계합니다.
             </p>
           </div>
-          <img src={diet2} alt="notomato diet detail screens" />
         </div>
         <span className="diet-caption caption-one">
           복약·식단 데이터를 통합 분석하여
@@ -220,13 +212,8 @@ export function ServiceSections({ includeHero = true } = {}) {
       {/* <section className="service-user-report-section">
         <img
           className="user-report-main"
-          src={mainHome}
-          alt="notomato user report main"
-        />
-        <img
-          className="user-report-side"
-          src={mainHomeSide}
-          alt="notomato user report side menu"
+          src={mainHomeSub}
+          alt="notomato user report main and side menu"
         />
 
         <p className="user-report-note note-user-a">
