@@ -1197,8 +1197,8 @@
   }
 
   .report-copy {
-    top: clamp(84px, 7vw, 112px);
-    bottom: auto;
+    top: auto;
+    bottom: 6vw;
   }
 
   .note-feed-a,
