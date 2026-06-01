@@ -953,6 +953,70 @@
   .service-onboarding-card {
     min-height: 24.2vw;
   }
+
+  .home-visual .service-note,
+  .note-report-a,
+  .note-report-b,
+  .note-feed-a,
+  .note-feed-b,
+  .note-feed-c {
+    font-size: clamp(14px, 1.08vw, 16px);
+    line-height: 1.65;
+  }
+
+  .home-visual .service-note b,
+  .note-report-a b,
+  .note-report-b b,
+  .note-feed-a b,
+  .note-feed-b b,
+  .note-feed-c b {
+    font-size: clamp(15px, 1.18vw, 18px);
+    line-height: 1.45;
+  }
+
+  .home-note-left-copy {
+    --copy-top: -34px;
+    --copy-left: -52%;
+  }
+
+  .home-note-left-copy-bottom {
+    --copy-top: 250px;
+    --copy-left: -52%;
+  }
+
+  .home-note-top-copy {
+    --copy-top: -6px;
+    --copy-left: 6%;
+  }
+
+  .home-note-mid-copy {
+    --copy-top: 0;
+    --copy-left: 4%;
+    width: 19vw;
+  }
+
+  .home-note-bottom-a-copy {
+    --copy-top: 10px;
+    --copy-left: -4%;
+    width: 20vw;
+  }
+
+  .home-note-bottom-b-copy {
+    --copy-top: -18px;
+    --copy-left: -2%;
+    width: 21vw;
+  }
+
+  .note-report-a,
+  .note-report-b {
+    width: 28vw;
+  }
+
+  .note-feed-a,
+  .note-feed-b,
+  .note-feed-c {
+    width: 24vw;
+  }
 }
 
 @media (min-width: 901px) and (max-width: 1180px) {
