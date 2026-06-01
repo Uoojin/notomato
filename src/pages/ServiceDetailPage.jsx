@@ -202,9 +202,9 @@ export function ServiceSections({ includeHero = true } = {}) {
           </span>
           <span className="service-note note-home-bottom-a">
             <p className="home-note-copy home-note-bottom-a-copy">
-              <b>개인화 콘텐츠 제공</b>사용자 건강 상태에 맞는 식단 및
+              <b>회원 정보 관리</b>프로필과 계정 정보를 간편하게
               <br />
-              건강 정보를 바탕으로 추천합니다.
+              수정할 수 있습니다.
             </p>
           </span>
           <span className="service-note note-home-bottom-b">
@@ -224,10 +224,9 @@ export function ServiceSections({ includeHero = true } = {}) {
         <div className="service-ai-copy">
           <h2>AI Scan Camera</h2>
           <p>
-            노토마토는 소외된 질환자를 위해 사용자의 질환 복약·식단 데이터를
-            통합 분석하여 최적화된 식사 환경을 설계합니다. 정보의 장벽을 허물어
-            질환자와 보호자 모두가 안심하고 편리하게 식사할 수 있는 일상을
-            현실로 만듭니다.
+            카메라로 찍기만 해도 음식을 스스로 구별하여 칼로리와 주의 성분을
+            화면 위에 바로 띄워줍니다. 상단의 한 줄 요약을 통해 지금 먹는 식단이
+            안전한지 바로 확인해 보세요.
           </p>
         </div>
         <div
@@ -274,8 +273,8 @@ export function ServiceSections({ includeHero = true } = {}) {
           <div className="diet-txt-group">
             <h2>Diet</h2>
             <p>
-              사용자의 질환·복약·식단 데이터를 통합 분석하여 최적화된 식사
-              환경을 설계합니다.
+              달력 한 장으로 복약 알림부터 맞춤형 식단 추천까지, 매일의 건강을
+              똑똑하게 기록하고 관리합니다.
             </p>
           </div>
         </div>
@@ -303,10 +302,10 @@ export function ServiceSections({ includeHero = true } = {}) {
         <div className="report-copy">
           <h2>Report</h2>
           <p>
-            노토마토는 소외된 질환자를 위해 사용자의 질환·복약·식단 데이터를
-            통합 분석하여 최적화된 식사 환경을 설계합니다. 정보의 장벽을 허물어
-            질환자와 보호자 모두가 안심하고 편리하게 식사할 수 있는 일상을
-            현실로 만듭니다.
+            매일 기록되는 사용자 정보를 자동으로 분석하여 주간·월간 건강
+            리포트를 발행합니다. 복잡한 숫자와 데이터 대신 한눈에 들어오는
+            직관적인 요약 피드백을 통해, 건강의 긍정적인 변화를 확인하고 안심할
+            수 있는 일상을 만듭니다.
           </p>
         </div>
         <div className="report-media">

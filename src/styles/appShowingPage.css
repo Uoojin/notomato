@@ -379,7 +379,7 @@
 
 .home-note-bottom-b-copy {
   --copy-top: -25px;
-  --copy-left: -6%;
+  --copy-left: 2%;
 }
 
 .home-note-top-copy {
@@ -773,6 +773,7 @@
   font-size: var(--main-body-size);
   line-height: 1.85;
   font-weight: 500;
+  max-width: 80%;
 }
 
 .report-main {
@@ -1193,6 +1194,11 @@
   .note-report-a,
   .note-report-b {
     width: 28vw;
+  }
+
+  .report-copy {
+    top: clamp(84px, 7vw, 112px);
+    bottom: auto;
   }
 
   .note-feed-a,
