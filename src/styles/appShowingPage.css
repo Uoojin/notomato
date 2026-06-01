@@ -565,6 +565,15 @@
   width: 21.8vw;
 }
 
+.report-combined {
+  position: absolute;
+  right: 5.9%;
+  top: 5.2%;
+  z-index: 3;
+  width: 57vw;
+  max-width: 1095px;
+}
+
 .note-report-a {
   top: 17%;
   left: 16.2%;
@@ -580,23 +589,19 @@
 }
 
 .note-report-a::before {
-  left: 116%;
-  width: calc(100vw * 0.35);
-  margin-left: 18px;
+  display: none;
 }
 
 .note-report-b::before {
-  left: 100%;
-  width: calc(100vw * 0.2);
-  margin-left: 58px;
+  display: none;
 }
 
 .note-report-a::after{
-  left:116%;
+  display: none;
 }
 
 .note-report-b::after {
-  left:116%;
+  display: none;
 }
 
 .service-user-report-section {
@@ -738,6 +743,7 @@
   .home-side-img,
   .report-main,
   .report-side,
+  .report-combined,
   .user-report-main,
   .user-report-side,
   .feed-visual img {

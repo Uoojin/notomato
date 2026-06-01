@@ -10,8 +10,7 @@ import mainHome from "../img/service/mainHome.png";
 import mainHomeSide from "../img/service/mainHome_side.png";
 import aiCameraDiet from "../img/service/AICamera&diet.png";
 import diet2 from "../img/service/diet_2.png";
-import report1 from "../img/service/report1.png";
-import report2 from "../img/service/report2.png";
+import report from "../img/service/report.png";
 import feed from "../img/service/feed.png";
 import "../styles/appShowingPage.css";
 import MainHeader from "../components/MainHeader";
@@ -202,14 +201,9 @@ export function ServiceSections({ includeHero = true } = {}) {
           </p>
         </div>
         <img
-          className="report-main"
-          src={report1}
-          alt="notomato report main screen"
-        />
-        <img
-          className="report-side"
-          src={report2}
-          alt="notomato report detail card"
+          className="report-combined"
+          src={report}
+          alt="notomato report screens"
         />
         <span className="service-note note-report-a">
           사용자 정보 관련 내용 설명 사용자 정보
