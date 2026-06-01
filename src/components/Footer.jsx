@@ -16,7 +16,13 @@ function Footer() {
               <span>
                 Yumin Jung
                 <br />
-                @imyuminj
+                <a
+                  href="https://www.instagram.com/imyuminj?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  @imyuminj
+                </a>
               </span>
             </div>
             <div>
@@ -24,7 +30,13 @@ function Footer() {
               <span>
                 Daeun Jung
                 <br />
-                @b0nebaki
+                <a
+                  href="https://www.instagram.com/b0nebaki?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  @b0nebaki
+                </a>
               </span>
             </div>
             <div>
@@ -32,7 +44,13 @@ function Footer() {
               <span>
                 Yujin Jung
                 <br />
-                @y.__.oou.u
+                <a
+                  href="https://www.instagram.com/y.__.oou.u/?utm_source=ig_web_button_share_sheet"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  @y.__.oou.u
+                </a>
               </span>
             </div>
           </div>
