@@ -497,6 +497,18 @@
   width: 87%;
 }
 
+.service-ai-camera-video {
+  position: absolute;
+  top: -0.45%;
+  left: 42.9%;
+  z-index: 3;
+  width: 27.1%;
+  height: 34.9%;
+  border-radius: 2.35vw;
+  object-fit: cover;
+  pointer-events: none;
+}
+
 .service-diet-one-overlay {
   top: 53.1%;
   left: -0.2%;
@@ -649,6 +661,14 @@
   left: 16.2%;
   color: var(--detail-gray);
   font-weight: 400;
+}
+
+.note-report-a b,
+.note-report-b b {
+  display: block;
+  margin-bottom: 1.05vw;
+  color: var(--detail-pink);
+  font-weight: 700;
 }
 
 .note-report-a::before {

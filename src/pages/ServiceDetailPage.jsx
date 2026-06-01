@@ -8,6 +8,7 @@ import loginPhone2 from "../img/service/login_phone2.png";
 import loading from "../img/service/loading.png";
 import mainHomeSub from "../img/service/mainHome&sub.png";
 import camera from "../img/service/camera.png";
+import aiScanCameraVideo from "../img/service/AIscancamera.mov";
 import diet1 from "../img/service/diet_1.png";
 import diet2 from "../img/service/diet_2.png";
 import report from "../img/service/report.png";
@@ -178,6 +179,16 @@ export function ServiceSections({ includeHero = true } = {}) {
         </div>
         <div className="service-ai-diet-map" aria-label="notomato ai scan and diet flow">
           <img className="service-ai-overlay service-camera-overlay" src={camera} alt="notomato ai scan camera screens" />
+          <video
+            className="service-ai-camera-video"
+            src={aiScanCameraVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-label="AI scan camera screen preview"
+          />
           <img className="service-ai-overlay service-diet-one-overlay" src={diet1} alt="notomato diet calendar screen" />
           <img className="service-ai-overlay service-diet-two-overlay" src={diet2} alt="notomato diet schedule and meal screens" />
         </div>
@@ -223,14 +234,20 @@ export function ServiceSections({ includeHero = true } = {}) {
           alt="notomato report screens"
         />
         <span className="service-note note-report-a">
-          사용자 정보 관련 내용 설명 사용자 정보
+          <b>클릭 한 번으로 연결되는 상세 건강 리포트</b>
+          메인 화면의 알림 카드를 누르면, 그동안 쌓인 나의
           <br />
-          관련 내용 설명 사용자 정보 관련 내용 설명
+          영양 성분 섭취 추이와 혈압 변화를 정밀한 그래프와
+          <br />
+          AI 맞춤 피드백으로 자세하게 확인할 수 있습니다.
         </span>
         <span className="service-note note-report-b">
-          사용자 정보 관련 내용 설명 사용자 정보
+          <b>나만을 위한 맞춤형 건강 정보 대시보드</b>
+          최근 진료 기록과 다음 병원 예약일은 물론, 핵심 검사
           <br />
-          관련 내용 설명 사용자 정보 관련 내용 설명
+          수치와 나에게 꼭 맞춘 식이제한 가이드라인 등 중요한
+          <br />
+          '내 정보'를 한눈에 모아보고 관리합니다.
         </span>
       </section>
 
