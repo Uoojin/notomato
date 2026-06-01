@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer";
 import flowChartComponent from "../img/process/flowChartComponent.png";
 import loginFlow from "../img/process/loginFlow.png";
@@ -10,9 +10,35 @@ import MainHeader from "../components/MainHeader";
 const iaItems = ["홈", "식단기록", "AI 분석 카메라", "마이케어", "피드"];
 
 export function ProcessSections() {
+  const heroRef = useRef(null);
+  const iaRef = useRef(null);
+  const [heroVisible, setHeroVisible] = useState(false);
+  const [iaVisible, setIaVisible] = useState(false);
+
+  useEffect(() => {
+    const heroNode = heroRef.current;
+    const iaNode = iaRef.current;
+    if (!heroNode || !iaNode) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          if (entry.target === heroNode) setHeroVisible(true);
+          if (entry.target === iaNode) setIaVisible(true);
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(heroNode);
+    observer.observe(iaNode);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
-      <section className="detail-hero process-hero">
+      <section className={`detail-hero process-hero${heroVisible ? " is-visible" : ""}`} ref={heroRef}>
         <div className="detail-hero-copy">
           <p>Information Architecture</p>
           <h1>복잡한 건강 관리를<br />직관적인 흐름으로 연결하다</h1>
@@ -22,7 +48,7 @@ export function ProcessSections() {
         </p>
       </section>
 
-      <section className="detail-ia-section" id="system">
+      <section className={`detail-ia-section${iaVisible ? " is-visible" : ""}`} id="system" ref={iaRef}>
         <div className="detail-ia-copy">
           <h2>Information Architecture<br />& WireFrame</h2>
           <p>

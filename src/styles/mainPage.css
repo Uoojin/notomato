@@ -149,7 +149,7 @@ section[id] {
   z-index: 5;
   object-fit: contain;
   filter: drop-shadow(0 18px 30px rgba(255, 90, 160, 0.14));
-  animation: float 5.8s ease-in-out infinite;
+  animation: float 3.2s cubic-bezier(0.45, 0, 0.28, 1) infinite;
 }
 
 .float-purple {
@@ -182,12 +182,20 @@ section[id] {
 }
 
 @keyframes float {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) rotate(-1deg);
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-4deg) scale(1);
   }
-  50% {
-    transform: translate3d(0, -24px, 0) rotate(2deg);
+  28% {
+    transform: translate3d(16px, -34px, 0) rotate(5deg) scale(1.035);
+  }
+  55% {
+    transform: translate3d(-10px, -16px, 0) rotate(-2deg) scale(0.985);
+  }
+  78% {
+    transform: translate3d(12px, 18px, 0) rotate(4deg) scale(1.02);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-4deg) scale(1);
   }
 }
 
@@ -284,6 +292,7 @@ section[id] {
 
 .research-copy .section-kicker {
   margin-bottom: clamp(42px, 3.8vw, 74px);
+  color: var(--pink);
 }
 
 .research-grid img {
@@ -293,12 +302,14 @@ section[id] {
 
 .research-grid h2 {
   margin: 0 0 clamp(56px, 4.6vw, 88px);
+  color: #000;
   font-size: var(--section-title-size);
   line-height: 1.35;
 }
 
 .research-grid blockquote {
   margin: 0 0 15px 0;
+  color: #555;
   font-weight: 700;
   font-size: clamp(18px, 1.2vw, 23px);
 }
@@ -323,7 +334,7 @@ section[id] {
 .disease-sticky {
   position: sticky;
   top: 0;
-  height: clamp(680px, 76vh, 820px);
+  height: 100vh;
   overflow: hidden;
   background: #fff;
 }
@@ -335,7 +346,7 @@ section[id] {
   flex-direction: column;
   justify-content: flex-start;
   padding: clamp(76px, 7vw, 130px) var(--page-x);
-  padding-top: clamp(136px, 12vh, 180px);
+  padding-top: clamp(118px, 12vh, 160px);
   background: #fff;
   opacity: 0;
   pointer-events: none;
@@ -528,6 +539,31 @@ section[id] {
   background: rgba(255, 255, 255, 0.72);
 }
 
+.problem-cards article {
+  opacity: 0;
+  transform: translate3d(0, 42px, 0);
+  transition:
+    opacity 760ms ease,
+    transform 760ms ease;
+}
+
+.problem-section.is-visible .problem-cards article {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.problem-section.is-visible .problem-cards article:nth-child(1) {
+  transition-delay: 120ms;
+}
+
+.problem-section.is-visible .problem-cards article:nth-child(2) {
+  transition-delay: 300ms;
+}
+
+.problem-section.is-visible .problem-cards article:nth-child(3) {
+  transition-delay: 480ms;
+}
+
 .problem-cards h3 {
   margin: 0 0 44px;
   font-size: clamp(18px, 1.3vw, 25px);
@@ -569,8 +605,17 @@ section[id] {
     rgba(255, 246, 250, 0.72) 58%,
     rgba(255, 255, 255, 0) 100%
   );
-  transform: translateX(-50%);
+  opacity: 0;
+  transform: translateX(-50%) translateY(30px);
+  transition:
+    opacity 900ms ease 420ms,
+    transform 900ms ease 420ms;
   pointer-events: none;
+}
+
+.solution-arc.is-visible::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 .solution-arc > * {
@@ -580,6 +625,41 @@ section[id] {
 
 .solution-arc .section-kicker {
   margin-bottom: 18px;
+}
+
+.solution-arc .section-kicker,
+.solution-arc h2,
+.solution-arc > p:not(.section-kicker),
+.solution-cards {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+  transition:
+    opacity 820ms ease,
+    transform 820ms ease;
+}
+
+.solution-arc.is-visible .section-kicker {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition-delay: 760ms;
+}
+
+.solution-arc.is-visible h2 {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition-delay: 900ms;
+}
+
+.solution-arc.is-visible > p:not(.section-kicker) {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition-delay: 1040ms;
+}
+
+.solution-arc.is-visible .solution-cards {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition-delay: 1180ms;
 }
 
 .solution-arc h2 {
@@ -609,6 +689,18 @@ section[id] {
   grid-row: 1;
   width: clamp(70px, 6vw, 118px);
   margin: 0;
+}
+
+.solution-arc.is-visible .solution-cards img {
+  animation: solutionIconFloat 2.4s ease-in-out infinite;
+}
+
+.solution-arc.is-visible .solution-cards article:nth-child(2) img {
+  animation-delay: -0.45s;
+}
+
+.solution-arc.is-visible .solution-cards article:nth-child(3) img {
+  animation-delay: -0.9s;
 }
 
 .solution-cards article > div {
@@ -641,7 +733,17 @@ section[id] {
   width: 1px;
   height: clamp(78px, 7vw, 140px);
   border-left: 1px dashed #ffb3d3;
-  transform: translate(-50%, -100%);
+  opacity: 0;
+  transform: translate(-50%, -100%) scaleY(0.55);
+  transform-origin: bottom;
+  transition:
+    opacity 520ms ease,
+    transform 680ms ease;
+}
+
+.solution-arc.is-visible::after {
+  opacity: 1;
+  transform: translate(-50%, -100%) scaleY(1);
 }
 
 .solution-dot {
@@ -654,7 +756,29 @@ section[id] {
   border: 5px solid #ffb4d3;
   border-radius: 50%;
   background: var(--pink);
-  transform: translateX(-50%);
+  opacity: 0;
+  transform: translateX(-50%) scale(0.65);
+  transition:
+    opacity 520ms ease 260ms,
+    transform 520ms ease 260ms;
+}
+
+.solution-arc.is-visible .solution-dot {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+@keyframes solutionIconFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  45% {
+    transform: translate3d(0, -8px, 0) rotate(3deg);
+  }
+  70% {
+    transform: translate3d(0, 3px, 0) rotate(-2deg);
+  }
 }
 
 /* 말풍선 영역 -----------------------------------------------------*/

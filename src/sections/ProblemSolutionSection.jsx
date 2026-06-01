@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import icon1 from "../img/icon1.png";
 import icon3 from "../img/icon3.png";
 import icon4 from "../img/icon4.png";
@@ -37,8 +37,34 @@ const solutionItems = [
 ];
 
 function ProblemSolutionSection() {
+  const problemRef = useRef(null);
+  const solutionRef = useRef(null);
+  const [problemVisible, setProblemVisible] = useState(false);
+  const [solutionVisible, setSolutionVisible] = useState(false);
+
+  useEffect(() => {
+    const problemNode = problemRef.current;
+    const solutionNode = solutionRef.current;
+    if (!problemNode || !solutionNode) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          if (entry.target === problemNode) setProblemVisible(true);
+          if (entry.target === solutionNode) setSolutionVisible(true);
+        });
+      },
+      { threshold: 0.24 }
+    );
+
+    observer.observe(problemNode);
+    observer.observe(solutionNode);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="problem-section" id="problem">
+    <section className={`problem-section${problemVisible ? " is-visible" : ""}`} id="problem" ref={problemRef}>
       <p className="section-kicker">Problem</p>
       <h2>매끼 반복되는 선택의 기로, 지쳐가는 환자와 보호자의 일상</h2>
       <p className="lead">
@@ -52,7 +78,7 @@ function ProblemSolutionSection() {
           </article>
         ))}
       </div>
-      <div className="solution-arc" id="solution">
+      <div className={`solution-arc${solutionVisible ? " is-visible" : ""}`} id="solution" ref={solutionRef}>
         <span className="solution-dot" aria-hidden="true" />
         <p className="section-kicker">Solution</p>
         <h2>데이터를 통해 불안을 확신으로 바꾸는 안심 식사 솔루션</h2>

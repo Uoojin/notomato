@@ -7,7 +7,9 @@ import loginPhone from "../img/service/login_phone.png";
 import loginPhone2 from "../img/service/login_phone2.png";
 import loading from "../img/service/loading.png";
 import mainHomeSub from "../img/service/mainHome&sub.png";
-import aiScanDiet from "../img/service/Aiscan+diet.png";
+import camera from "../img/service/camera.png";
+import diet1 from "../img/service/diet_1.png";
+import diet2 from "../img/service/diet_2.png";
 import report from "../img/service/report.png";
 import feed from "../img/service/feed.png";
 import "../styles/appShowingPage.css";
@@ -151,11 +153,11 @@ export function ServiceSections({ includeHero = true } = {}) {
             현실로 만듭니다.
           </p>
         </div>
-        <img
-          className="service-ai-diet-map"
-          src={aiScanDiet}
-          alt="notomato ai scan and diet flow"
-        />
+        <div className="service-ai-diet-map" aria-label="notomato ai scan and diet flow">
+          <img className="service-camera-img" src={camera} alt="notomato ai scan camera screens" />
+          <img className="service-diet-one-img" src={diet1} alt="notomato diet calendar screen" />
+          <img className="service-diet-two-img" src={diet2} alt="notomato diet schedule and meal screens" />
+        </div>
         <div className="diet-detail-group">
           <div>
             <h2>Diet</h2>
