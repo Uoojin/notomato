@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer";
 import serviceHeroPhone from "../img/service/service_hero_phone.png";
 import serviceNotomato from "../img/service/notomato.png";
-import serviceStart from "../img/service/service_start.png";
-import pinkLogo from "../img/service/pinkLogo.png";
+import serviceOverview from "../img/serviceOverview.png";
 import loginVideo from "../img/service/login.mov";
 import loginPhone2 from "../img/service/login_phone2.png";
 import loading from "../img/service/loading.png";
@@ -95,18 +94,20 @@ export function ServiceSections({ includeHero = true } = {}) {
       )}
 
       <section className="service-onboarding-card" id="app">
-        <div className="service-start-visual">
-          <img src={serviceStart} alt="notomato service start screen" />
-        </div>
-        <div className="service-start-copy">
+        <div className="service-overview-copy">
           <p>Service Overview</p>
-          <img src={pinkLogo} alt="notomato" />
-          <h2>멈추지 않는 브랜드 경험</h2>
+          <h2>
+            노토마토는 멈추지 않는
+            <br />
+            브랜드 경험을 제공합니다.
+          </h2>
           <span>
-            노토마토는 식단 이미지 분석 로딩 화면을 풀컬러로 채우고, 아이콘이 살아
-            움직이는 마이크로 인터랙션을 구현했습니다.
+            마이크로 인터랙션, 풀컬러 이미지, 체계화된 그래픽들을
+            <br />
+            통해 사용자에게 더 나은 경험을 제공하고자 합니다.
           </span>
         </div>
+        <img className="service-overview-image" src={serviceOverview} alt="notomato service overview" />
       </section>
 
       <section
