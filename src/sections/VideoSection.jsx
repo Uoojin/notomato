@@ -7,11 +7,17 @@ function VideoSection() {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return undefined;
+    video.muted = false;
+    video.volume = 1;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          video.play().catch(() => {});
+          video.muted = false;
+          video.play().catch(() => {
+            video.muted = true;
+            video.play().catch(() => {});
+          });
         } else {
           video.pause();
         }
@@ -28,7 +34,8 @@ function VideoSection() {
       <video
         ref={videoRef}
         className="video-player"
-        muted
+        autoPlay
+        controls
         playsInline
         loop
         preload="metadata"
