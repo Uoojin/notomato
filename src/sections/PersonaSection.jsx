@@ -1,7 +1,6 @@
 import React from "react";
-import journeyMap from "../img/journeymap.png";
-import persona1 from "../img/persona1.png";
-import persona2 from "../img/persona2.png";
+import journeyMap from "../img/journeymap_final.png";
+import personaFinal from "../img/persona_final.png";
 
 function PersonaSection() {
   return (
@@ -9,8 +8,7 @@ function PersonaSection() {
       
       <div className="persona-zone">
         <p className="section-kicker-p">Persona</p>
-        <img className="persona-complete" src={persona1} alt="김민수 페르소나" />
-        <img className="persona-complete" src={persona2} alt="박지연 페르소나" />
+        <img className="persona-complete" src={personaFinal} alt="notomato persona" />
       </div>
       <div className="journey">
         <p className="journey-section-kicker">Journey Map</p>

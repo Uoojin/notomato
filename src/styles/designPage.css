@@ -358,6 +358,54 @@
   }
 }
 
+/* Requested combined component/color/icon board. */
+.design-system-final.main-icon-section {
+  min-height: auto;
+  padding: 130px 120px 190px;
+  overflow: visible;
+  text-align: left;
+}
+
+.design-system-final.main-icon-section p,
+.design-system-final.main-icon-section span,
+.design-system-final .main-icon-set,
+.design-system-board {
+  position: relative;
+  z-index: 1;
+}
+
+.design-system-final.main-icon-section .disease-icons-title {
+  color: var(--detail-pink);
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.design-system-final.main-icon-section .disease-icons-desc {
+  display: block;
+  max-width: none;
+  margin: 64px 0 132px;
+  color: #777;
+  font-size: 24px;
+  line-height: 1.7;
+}
+
+.design-system-final .design-icons-final {
+  display: block;
+  width: min(100%, 1680px);
+  margin: 0 auto 130px;
+}
+
+.design-system-board {
+  display: block;
+  width: min(100%, 1680px);
+  margin: 0 auto;
+}
+
+.design-system-final .main-icon-bg,
+.design-system-final h2 {
+  display: none;
+}
+
 @media (max-width: 760px) {
   :root {
     --detail-x: 22px;
@@ -387,5 +435,125 @@
     max-width: none;
     margin-left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 821px) {
+  .design-hero,
+  .design-component-section,
+  .color-system-section,
+  .main-icon-section,
+  .design-system-final.main-icon-section {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
+
+@media (max-width: 1512px) {
+  /* MacBook Pro 14 대응 */
+  .design-hero,
+  .design-component-section,
+  .color-system-section,
+  .main-icon-section,
+  .design-system-final.main-icon-section {
+    padding-left: 96px;
+    padding-right: 96px;
+  }
+
+  .design-solution-card {
+    gap: 92px;
+    padding-left: 88px;
+    padding-right: 88px;
+  }
+
+  .design-system-final.main-icon-section .disease-icons-title {
+    font-size: 30px;
+  }
+
+  .design-system-final.main-icon-section .disease-icons-desc {
+    margin-bottom: 104px;
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 1366px) {
+  /* 작은 노트북 대응 */
+  .design-hero,
+  .design-component-section,
+  .color-system-section,
+  .main-icon-section,
+  .design-system-final.main-icon-section {
+    padding-left: 84px;
+    padding-right: 84px;
+  }
+
+  .design-solution-card {
+    gap: 72px;
+    padding-left: 76px;
+    padding-right: 76px;
+  }
+
+  .design-solution-card img {
+    width: 330px;
+  }
+
+  .design-system-final.main-icon-section .disease-icons-desc {
+    margin-bottom: 88px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .design-hero,
+  .design-component-section,
+  .color-system-section,
+  .main-icon-section,
+  .design-system-final.main-icon-section {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .design-solution-card {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .design-solution-card p {
+    left: 32px;
+  }
+
+  .design-solution-card img {
+    right: 24px;
+    width: 220px;
+    opacity: 0.45;
+  }
+
+  .design-system-final .design-icons-final,
+  .design-system-board {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .design-hero,
+  .design-component-section,
+  .color-system-section,
+  .main-icon-section,
+  .design-system-final.main-icon-section {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .design-solution-card {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .design-solution-card p {
+    left: 22px;
   }
 }

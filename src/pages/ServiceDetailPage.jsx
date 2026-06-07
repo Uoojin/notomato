@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer";
-import bannerLogo from "../img/banner_logo.png";
 import serviceHeroPhone from "../img/service/service_hero_phone.png";
 import serviceNotomato from "../img/service/notomato.png";
+import serviceStart from "../img/service/service_start.png";
+import pinkLogo from "../img/service/pinkLogo.png";
 import loginVideo from "../img/service/login.mov";
 import loginPhone2 from "../img/service/login_phone2.png";
 import loading from "../img/service/loading.png";
@@ -14,7 +15,7 @@ import dietVideo from "../img/service/diet.mov";
 import diet2 from "../img/service/diet_2.png";
 import report from "../img/service/report.png";
 import reportVideo from "../img/service/report.mp4";
-import feed from "../img/service/feed.png";
+import feeds from "../img/service/feeds.png";
 import last from "../img/last.png";
 import "../styles/appShowingPage.css";
 import MainHeader from "../components/MainHeader";
@@ -94,15 +95,18 @@ export function ServiceSections({ includeHero = true } = {}) {
       )}
 
       <section className="service-onboarding-card" id="app">
-        <p>Onboarding</p>
-        <h2>멈추지 않는 브랜드 경험</h2>
-        <span>
-          노토마토는 식단 이미지 분석 로딩 화면을 풀컬러로 채우고, 아이콘이 살아
-          움직이는 마이크로 인터랙션을 구현했습니다. 잠깐의 대기 시간 동안
-          사용자의 이탈을 막고, 앱이 실시간으로 작동하는 생동감을 전달해 로딩을
-          브랜드 경험의 일부로 만들었습니다.
-        </span>
-        <img src={bannerLogo} alt="" />
+        <div className="service-start-visual">
+          <img src={serviceStart} alt="notomato service start screen" />
+        </div>
+        <div className="service-start-copy">
+          <p>Service Overview</p>
+          <img src={pinkLogo} alt="notomato" />
+          <h2>멈추지 않는 브랜드 경험</h2>
+          <span>
+            노토마토는 식단 이미지 분석 로딩 화면을 풀컬러로 채우고, 아이콘이 살아
+            움직이는 마이크로 인터랙션을 구현했습니다.
+          </span>
+        </div>
       </section>
 
       <section
@@ -377,7 +381,7 @@ export function ServiceSections({ includeHero = true } = {}) {
           </p>
         </div>
         <div className="feed-visual">
-          <img src={feed} alt="notomato feed screen" />
+          <img className="feed-final-img" src={feeds} alt="notomato feed service screens" />
           <span className="service-note note-feed-a">
             <b>맞춤형 건강 메이트 추천</b>
             나랑 비슷한 건강 상태를 가진 유저들

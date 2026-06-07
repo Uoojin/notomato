@@ -22,13 +22,13 @@
 
 .logo-pill {
   justify-content: center;
-  width: 108px;
-  border: 1.4px solid #111;
-  background: rgba(255, 255, 255, 0.82);
+  width: 150px;
+  border: 0;
+  background: transparent;
 }
 
 .logo-pill img {
-  width: 72px;
+  width: 108px;
   height: auto;
   display: block;
 }
@@ -36,7 +36,8 @@
 .header-pill {
   gap: 10px;
   padding: 4px;
-  background: rgba(255, 217, 234, 0.96);
+  background: rgba(255, 255, 255, 0.34);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.035);
 }
 
 .header-pill a {
@@ -59,10 +60,72 @@
 .header-pill a:hover,
 .header-pill a.active {
   border-color: rgba(255, 255, 255, 0.62);
-  background: rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.58);
   color: #111;
   box-shadow:
-    0 8px 18px rgba(163, 82, 121, 0.16),
+    0 8px 18px rgba(0, 0, 0, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(16px);
+}
+
+@media (max-width: 1512px) {
+  /* MacBook Pro 14 대응 */
+  .site-header {
+    top: 24px;
+  }
+}
+
+@media (max-width: 1366px) {
+  /* 작은 노트북 대응 */
+  .site-header {
+    top: 20px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .site-header {
+    width: calc(100% - 32px);
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .logo-pill {
+    width: 118px;
+  }
+
+  .logo-pill img {
+    width: 92px;
+  }
+
+  .header-pill {
+    gap: 4px;
+  }
+
+  .header-pill a {
+    min-width: 76px;
+    font-size: 11px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .site-header {
+    top: 14px;
+    width: calc(100% - 20px);
+  }
+
+  .logo-pill {
+    width: 96px;
+  }
+
+  .logo-pill img {
+    width: 78px;
+  }
+
+  .header-pill a {
+    min-width: 62px;
+    padding: 0 8px;
+    font-size: 10px;
+  }
 }

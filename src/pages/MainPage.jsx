@@ -3,12 +3,11 @@ import MainHeader from "../components/MainHeader";
 import Footer from "../components/Footer";
 import TopButton from "../components/TopButton";
 import BackgroundSection from "../sections/BackgroundSection";
-import DiseaseScroller from "../sections/DiseaseScroller";
 import HeroSection from "../sections/HeroSection";
+import MarketResearchSection from "../sections/MarketResearchSection";
 import PersonaSection from "../sections/PersonaSection";
 import ProblemSolutionSection from "../sections/ProblemSolutionSection";
 import ResearchIntroSection from "../sections/ResearchIntroSection";
-import SpeechSection from "../sections/SpeechSection";
 import VideoSection from "../sections/VideoSection";
 import { ProcessSections } from "./ProcessDetailPage";
 import { DesignSystemSections } from "./DesignSystemDetailPage";
@@ -18,18 +17,31 @@ function MainPage() {
   return (
     <main className="main-page detail-page">
       <MainHeader />
+
+      {/* Intro */}
       <HeroSection />
       <VideoSection />
       <BackgroundSection />
+
+      {/* Research */}
       <ResearchIntroSection />
-      <DiseaseScroller />
       <PersonaSection />
+      <MarketResearchSection />
+
+      {/* Problem & solution */}
       <ProblemSolutionSection />
-      <SpeechSection />
+
+      {/* Process */}
       <ProcessSections />
+
+      {/* Design system */}
       <DesignSystemSections />
+
+      {/* Service */}
       <ServiceSections includeHero={false} />
       <LastVisualSection />
+
+      {/* Global */}
       <Footer />
       <TopButton />
     </main>

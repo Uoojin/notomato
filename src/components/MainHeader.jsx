@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import logo from "../img/logo.png";
+import logo from "../img/headerLogo.png";
 
 const navLinks = [
-  { target: "background", label: "About" },
-  { target: "system", label: "System" },
-  { target: "design", label: "Design" },
-  { target: "app", label: "App" },
+  { target: "problem", label: "Process" },
+  { target: "design", label: "Design System" },
+  { target: "app", label: "Service" },
 ];
 
 function MainHeader() {
