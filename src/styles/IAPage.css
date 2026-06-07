@@ -48,6 +48,7 @@
 }
 
 .process-hero.is-visible .detail-hero-desc {
+  top: 16%;
   transition-delay: 180ms;
 }
 
@@ -259,7 +260,7 @@
 
 /* Requested process hero style: match the main pink background card. */
 .process-hero.detail-hero {
-  position: relative;
+  /* position: relative;
   grid-template-columns: 0.35fr 0.65fr;
   gap: clamp(48px, 7vw, 132px);
   align-items: center;
@@ -269,15 +270,28 @@
   overflow: hidden;
   border-radius: clamp(34px, 2.25vw, 44px);
   background: var(--detail-pink);
+  color: #fff; */
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.35fr 0.65fr;
+  gap: clamp(48px, 7vw, 132px);
+  align-items: center;
+  min-height: clamp(300px, 24.2vw, 466px);
+  padding: clamp(150px, 13vw, 250px) clamp(66px, 5.75vw, 110px)
+    clamp(54px, 4.2vw, 80px);
+  overflow: hidden;
+  border-radius: clamp(34px, 2.25vw, 44px);
+  background: var(--pink);
   color: #fff;
 }
 
 .process-hero .detail-hero-copy p {
   position: absolute;
-  top: clamp(54px, 4.1vw, 80px);
-  left: clamp(86px, 5.9vw, 114px);
-  margin: 0;
+  top: clamp(-171px, -10vw, 80px);
+  /* left: clamp(86px, 5.9vw, 114px); */
   color: #fff;
+  font-size: 1.56vw;
+  font-weight: 600;
 }
 
 .process-hero .detail-hero-copy {

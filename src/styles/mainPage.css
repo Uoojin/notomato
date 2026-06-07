@@ -1151,7 +1151,7 @@ section[id] {
 
 .market-layout > img {
   display: block;
-  width: 120%;
+  width: 110%;
   max-width: none;
   justify-self: start;
   opacity: 0;
@@ -1441,6 +1441,10 @@ section[id] {
     padding-left: 72px;
   }
 
+  .research-disease-card:nth-child(3) {
+    padding-left: 72px;
+  }
+
   .research-dot-graph {
     grid-template-rows: repeat(5, 21px);
     grid-template-columns: repeat(10, 21px);
@@ -1448,15 +1452,22 @@ section[id] {
   }
 
   .market-layout {
-    gap: 92px;
+    grid-template-columns: 520px minmax(0, 1fr);
+    gap: 72px;
+    margin-top: 106px;
+  }
+
+  .market-layout > img {
+    width: 100%;
   }
 
   .market-list {
-    margin-left: 44px;
+    margin-left: 20px;
   }
 
   .market-list article {
-    grid-template-columns: minmax(100px, 0.58fr) 150px minmax(360px, max-content);
+    grid-template-columns: 110px 150px minmax(320px, max-content);
+    gap: 26px;
   }
 
   .persona-section > .journey,
