@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import market from "../img/market.png";
 
 const marketItems = [
-  ["프라이즈", "개인 건강 데이터를 기반으로 한 맞춤형 헬스케어"],
+  ["필라이즈", "개인 건강 데이터를 기반으로 한 맞춤형 헬스케어"],
   ["밀리그램", "지속적인 동기부여를 통해 건강한 체중 관리를 지원"],
   ["Cronometer", "정밀 영양 분석을 통한 데이터 기반 건강 관리"],
 ];

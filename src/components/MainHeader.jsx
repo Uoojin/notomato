@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "../img/headerLogo.png";
 
 const navLinks = [
-  { target: "problem", label: "Process" },
+  { target: "background", label: "Process" },
   { target: "design", label: "Design System" },
   { target: "app", label: "Service" },
 ];
