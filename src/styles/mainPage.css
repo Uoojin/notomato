@@ -330,7 +330,7 @@ section[id] {
 /* 페르소나 영역 -----------------------------------------------------*/
 .section-kicker-p {
   text-align: center;
-  margin: 0 0 clamp(34px, 2vw, 75px);
+  margin: 0 0 clamp(34px, 3vw, 75px);
   color: white;
   font-size:clamp(16px, 2vw, 30px);
   font-weight: 600;
@@ -951,7 +951,7 @@ section[id] {
 
 .research-intro .research-copy .section-kicker {
   margin-bottom: clamp(24px, 2vw, 34px);
-  font-size: clamp(18px, 1.45vw, 24px);
+  font-size: clamp(16px, 2vw, 30px);
 }
 
 .research-intro .research-grid h2 {
@@ -970,7 +970,7 @@ section[id] {
 
 .research-disease-row {
   display: grid;
-  grid-template-columns: 580px 690px 410px;
+  grid-template-columns: 580px 680px 420px;
   width: 100%;
   margin: clamp(70px, 5.8vw, 104px) 0 0;
 }
@@ -1016,9 +1016,9 @@ section[id] {
 .research-dot-graph {
   display: grid;
   grid-auto-flow: column;
-  grid-template-rows: repeat(5, 24px);
-  grid-template-columns: repeat(10, 24px);
-  gap: 12px;
+  grid-template-rows: repeat(5, 27px);
+  grid-template-columns: repeat(10, 27px);
+  gap: 13px;
   width: max-content;
   margin-bottom: clamp(28px, 2.3vw, 42px);
 }
@@ -1323,7 +1323,8 @@ section[id] {
 
 .solution-box-card {
   position: relative;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   /* aspect-ratio: 586 / 896; */
   padding: 0;
   text-align: left;
@@ -1415,6 +1416,10 @@ section[id] {
   .problem-section {
     padding-left: 96px;
     padding-right: 96px;
+  }
+
+  .market-layout > img {
+    width: 100%;
   }
 
   .solution-arc {
