@@ -572,7 +572,7 @@
   margin: 2.6vw 0 0;
   color: var(--detail-gray);
   font-size: var(--main-body-size);
-  line-height: 2.05;
+  line-height: 1.8;
 }
 
 .diet-detail-group p {
@@ -765,7 +765,7 @@
 .report-copy {
   position: absolute;
   left: 6.7vw;
-  bottom: 6vw;
+  bottom: 7vw;
   z-index: 2;
   width: 36vw;
   color: #fff;
@@ -1206,7 +1206,11 @@
 
   .report-copy {
     top: auto;
-    bottom: 3vw;
+    bottom: 5vw;
+  }
+
+  .report-media {
+    top: -5.2%
   }
 
   .note-feed-a {
@@ -1345,9 +1349,9 @@
 
 .feed-visual .service-note {
   display: block;
-  width: clamp(220px, 19vw, 330px);
+  width: clamp(360px, 24vw, 460px);
   color: var(--detail-gray);
-  font-size: clamp(12px, 0.82vw, 15px);
+  font-size: var(--main-body-size);
   line-height: 1.65;
   font-weight: 400;
 }
@@ -1361,6 +1365,13 @@
   margin-bottom: 0.65vw;
   color: var(--detail-pink);
   font-weight: 700;
+}
+
+.feed-visual .feed-note-body {
+  display: block;
+  max-width: 100%;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .feed-visual .note-feed-a {
@@ -1416,7 +1427,7 @@
   }
 
   .feed-visual .service-note {
-    width: 280px;
+    width: 360px;
   }
 }
 
@@ -1436,7 +1447,7 @@
   }
 
   .feed-visual .service-note {
-    width: 250px;
+    width: 330px;
     font-size: 13px;
   }
 

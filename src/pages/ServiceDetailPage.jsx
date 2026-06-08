@@ -107,7 +107,11 @@ export function ServiceSections({ includeHero = true } = {}) {
             통해 사용자에게 더 나은 경험을 제공하고자 합니다.
           </span>
         </div>
-        <img className="service-overview-image" src={serviceOverview} alt="notomato service overview" />
+        <img
+          className="service-overview-image"
+          src={serviceOverview}
+          alt="notomato service overview"
+        />
       </section>
 
       <section
@@ -118,9 +122,9 @@ export function ServiceSections({ includeHero = true } = {}) {
           <h2>Login & Sign</h2>
           <p>
             간편 로그인부터 기초 정보 입력, 관리 질환 선택에 이르는 초기 설정
-            단계를 체계적으로 연결하여 환자의 진입 장벽을 낮췄습니다. 축적된
-            데이터는 투약 및 병원 정보와 연동되어, 첫 순간부터 사용자만을 위한
-            개인 맞춤형 정밀 식단을 설계하는 핵심 기반이 됩니다.
+            단계를 체계적으로 연결하여 환자의 진입 장벽을 낮췄습니다. <br />
+            축적된 데이터는 투약 및 병원 정보와 연동되어, 첫 순간부터 사용자만을
+            위한 개인 맞춤형 정밀 식단을 설계하는 핵심 기반이 됩니다.
           </p>
         </div>
         <div className="service-login-visual">
@@ -166,9 +170,9 @@ export function ServiceSections({ includeHero = true } = {}) {
           <h2>Main Home</h2>
           <p>
             노토마토는 소외된 질환자를 위해 사용자의 질환·복약·식단 데이터를
-            통합 분석하여 최적화된 식사 환경을 설계합니다. 정보의 장벽을 허물어
-            질환자와 보호자 모두가 안심하고 편리하게 식사할 수 있는 일상을
-            현실로 만듭니다.
+            통합 분석하여 최적화된 식사 환경을 설계합니다. <br />
+            정보의 장벽을 허물어 질환자와 보호자 모두가 안심하고 편리하게 식사할
+            수 있는 일상을 현실로 만듭니다.
           </p>
         </div>
         <div className="home-visual">
@@ -307,10 +311,9 @@ export function ServiceSections({ includeHero = true } = {}) {
         <div className="report-copy">
           <h2>Report</h2>
           <p>
-            매일 기록되는 사용자 정보를 자동으로 분석하여 주간·월간 건강
-            리포트를 발행합니다. 복잡한 숫자와 데이터 대신 한눈에 들어오는
-            직관적인 요약 피드백을 통해, 건강의 긍정적인 변화를 확인하고 안심할
-            수 있는 일상을 만듭니다.
+            기록된 정보를 분석해 주간·월간 건강 리포트를 발행합니다. 복잡한
+            데이터 대신 한눈에 들어오는 요약 피드백으로 환자와 보호자 모두
+            안심할 수 있습니다.
           </p>
         </div>
         <div className="report-media">
@@ -332,19 +335,13 @@ export function ServiceSections({ includeHero = true } = {}) {
         </div>
         <span className="service-note note-report-a">
           <b>클릭 한 번으로 연결되는 상세 건강 리포트</b>
-          메인 화면의 알림 카드를 누르면, 그동안 쌓인 나의
-          <br />
-          영양 성분 섭취 추이와 혈압 변화를 정밀한 그래프와
-          <br />
-          AI 맞춤 피드백으로 자세하게 확인할 수 있습니다.
+          알림 카드를 누르면 영양 섭취 추이와 혈압 변화를 <br />
+          그래프와 AI 피드백으로 확인할 수 있습니다.
         </span>
         <span className="service-note note-report-b">
           <b>나만을 위한 맞춤형 건강 정보 대시보드</b>
-          최근 진료 기록과 다음 병원 예약일은 물론, 핵심 검사
-          <br />
-          수치와 나에게 꼭 맞춘 식이제한 가이드라인 등 중요한
-          <br />
-          '내 정보'를 한눈에 모아보고 관리합니다.
+          최근 진료와 예약일, 핵심 검사 수치와 맞춤 식이제한 <br />
+          가이드까지 중요한 정보를 한눈에 관리할 수 있습니다.
         </span>
       </section>
 
@@ -382,30 +379,31 @@ export function ServiceSections({ includeHero = true } = {}) {
           </p>
         </div>
         <div className="feed-visual">
-          <img className="feed-final-img" src={feeds} alt="notomato feed service screens" />
+          <img
+            className="feed-final-img"
+            src={feeds}
+            alt="notomato feed service screens"
+          />
           <span className="service-note note-feed-a">
             <b>맞춤형 건강 메이트 추천</b>
-            나랑 비슷한 건강 상태를 가진 유저들
-            <br />
-            을 팔로우하고, 그들의 식단 노하우와
-            <br />
-            복약 일상을 피드로 받아보세요.
+            <span className="feed-note-body">
+              나랑 비슷한 질환을 가진 유저들을 팔로우하고, <br />
+              그들의 노하우와 일상을 피드로 받아보세요.
+            </span>
           </span>
           <span className="service-note note-feed-b">
             <b>내 관심사에 딱 맞는 카테고리별 피드 탐색</b>
-            식단, 관리, 식품 추천, 비포&amp;애프터 등 내
-            <br />
-            가 지금 필요한 정보만 카테고리별로 골라
-            <br />
-            빠르게 모아볼 수 있습니다.
+            <span className="feed-note-body">
+              식단, 관리 등 내가 지금 필요한 정보만 <br />카테고리별로 골라 모아볼 수
+              있습니다.
+            </span>
           </span>
           <span className="service-note note-feed-c">
             <b>이웃 메이트들이 직접 검증한 생생한 건강 레시피</b>
-            맛과 건강을 모두 잡은 메이트들의 실제 식단 사진
-            <br />
-            과 꿀팁 가득한 조리법을 확인하고, 좋아요와 북마
-            <br />
-            크로 저장합니다.
+            <span className="feed-note-body">
+              맛과 건강을 모두 잡은 메이트들의 실제 식단 사진과 꿀팁 가득한
+              조리법을 확인하고, 좋아요와 북마크로 저장합니다.
+            </span>
           </span>
         </div>
       </section>
